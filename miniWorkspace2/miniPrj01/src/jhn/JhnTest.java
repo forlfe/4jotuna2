@@ -1,7 +1,8 @@
 package jhn;
 
 public class JhnTest {
-	public void test() {
+	
+	public void Test() {
 		System.out.println("say Hi!");
 	}
 
