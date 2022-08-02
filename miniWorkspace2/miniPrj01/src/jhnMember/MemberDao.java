@@ -114,7 +114,7 @@ public MemberVo adminLogin(String adminId, String adminPwd) throws Exception {
 		List<MemberVo> memberVoList = new ArrayList<MemberVo>();
 		try {
 			conn = JDBCTemplate.getConnection();
-			String sql="SELECT * FROM MEMBER WHERE NO = ? ";
+			String sql="SELECT * FROM JOIN WHERE NUM = ? ";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberNo);
@@ -124,7 +124,7 @@ public MemberVo adminLogin(String adminId, String adminPwd) throws Exception {
 			
 			
 			while(rs.next()) {
-				String no = rs.getString("NO");
+				String no = rs.getString("NUM");
 				String id = rs.getString("ID");
 				String pwd = rs.getString("PWD");
 				String nick = rs.getString("NICK");
