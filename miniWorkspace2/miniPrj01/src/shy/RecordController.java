@@ -1,5 +1,7 @@
 package shy;
 
+import java.sql.Timestamp;
+
 public class RecordController {
 	
 	/*
@@ -57,14 +59,32 @@ public class RecordController {
 		//멤버번호 받아서 개인 기록 조회하기
 		RecordVo vo = new RecordService().showPersonalRecord(no);
 		
+		
+		
+		
 		//실행 결과 보여주기 -> 개인 총 결과 보여주고 싶은데...? 이게 어떻게 결과 나올지 모르겠음..ㅠㅠ
 		
+		
 		System.out.println("\n------ 개인 기록 조회 ------");
-		System.out.print("운동기록번호: " + vo.getNumrec() + " | ");
-		System.out.print("닉네임 : " + vo.getNick() + " | ");
-		System.out.print("영법코드 : " + vo.getStrokeNo() + " | ");
-		System.out.print("소모칼로리 : " + vo.getKcal() + " | ");
-		System.out.println("운동시간 : " + vo.getMin() + " | ");
+		
+		for(int i = 0; i <recordVoList.size(); ++i) {
+			RecordVo temp = recordVoList.get(i);
+			
+			int no2 = temp.getNumrec();
+			int min = temp.getMin();
+			Timestamp date = temp.getDate();
+			int num = temp.getNum();
+			int strokeNo = temp.getStrokeNo();
+			double kcal = temp.getKcal();
+		//System.out.print("운동기록번호: " + vo.getNumrec() + " | ");
+		//System.out.print("닉네임 : " + vo.getNick() + " | ");
+		//System.out.print("영법코드 : " + vo.getStrokeNo() + " | ");
+		//System.out.print("소모칼로리 : " + vo.getKcal() + " | ");
+		//System.out.println("운동시간 : " + vo.getMin() + " | ");
+		
+		System.out.println(no2 + /*" | " + nick +*/ "| "+ date + " | " + min + " | " + kcal + " | " );
+		
+	}
 		
 	}//method
 
