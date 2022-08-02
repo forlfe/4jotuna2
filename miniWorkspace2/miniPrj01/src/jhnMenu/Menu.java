@@ -12,8 +12,12 @@ public int showMenu() {
 		
 		if(Main.loginmember != null) {
 			System.out.println(Main.loginmember.getNick()+"님 안녕하세요.");
+			System.out.println("=======================================");
 			System.out.println("1. 관리페이지");
+			System.out.println("4. 마이페이지");
+			
 		}else {
+			System.out.println("=========================");
 			System.out.println("1. 관리페이지");
 			System.out.println("2. 로그인");
 			System.out.println("3. 회원가입");
@@ -31,12 +35,14 @@ public int showMenu() {
 		
 		if(Main.loginmember != null) {
 			System.out.println(Main.loginmember.getAdminId()+" 님 안녕하세요.");
+			System.out.println("==========================================");
 			System.out.println("1. 회원 관리");
 			System.out.println("2. 영법 관리");
 			System.out.println("3. 팀 관리");
 			
 			
 		}else {
+			System.out.println("===========================================");
 			System.out.println("1. 회원 관리");
 			System.out.println("2. 영법 관리");
 			System.out.println("3. 팀 관리");
