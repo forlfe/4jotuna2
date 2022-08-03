@@ -29,6 +29,9 @@ public class Main {
 			case 4: 
 				new MemberController().myPage(); 
 				break;
+			case 5:
+				new MemberController().community(); 
+				break;
 			}
 			
 			

@@ -15,6 +15,7 @@ public int showMenu() {
 			System.out.println("=======================================");
 			System.out.println("1. 관리페이지");
 			System.out.println("4. 마이페이지");
+			System.out.println("5. 커뮤니티");
 			
 		}else {
 			System.out.println("=========================");
@@ -22,7 +23,7 @@ public int showMenu() {
 			System.out.println("2. 로그인");
 			System.out.println("3. 회원가입");
 			System.out.println("4. 마이페이지");
-			System.out.println("5. 게시글 목록 조회");
+			System.out.println("5. 커뮤니티");
 			
 		}
 		return InputUtil.getInt();

@@ -265,4 +265,30 @@ public MemberVo adminLogin(String adminId, String adminPwd) throws Exception {
 		
 	}
 
+	public int write(MemberVo vo, Connection conn) throws Exception {
+		
+		int result =  0;
+		PreparedStatement pstmt = null;
+		
+		try {
+			String sql = "INSERT INTO COMMUNITY(POSTNUM,WRITE_DATE,TITLE,CONTENT) VALUES (?,SYSDATE,?,?)";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getNo());
+			pstmt.setString(2, vo.getTitle());
+			pstmt.setString(3, vo.getContent());
+			
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			JDBCTemplate.close(pstmt);
+		}
+		
+		return result;
+		
+		
+	}
+
 }

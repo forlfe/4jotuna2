@@ -249,6 +249,58 @@ public void adminPage() {
 			return;
 		}
 		
+	}
+	public void community() {
+		
+		System.out.println("-----------------");
+		System.out.println(" COMMUNITY");
+		System.out.println("=================");
+		System.out.println("1. 게시글 작성");
+		System.out.println("2. 게시글 확인");
+		
+		
+		
+		int result=InputUtil.getInt();
+		if(result == 1) {
+			write();
+		}else {
+			System.out.println("번호를 잘못 누르셨습니다. 다시 선택하여 주십시오.");
+			
+		}
+		
+		
 	}	
+	public void write() {
+		
+		if(Main.loginmember == null) {
+			System.out.println("로그인을 먼저 해주세요.");
+			return;
+		}
+
+		System.out.println("======= 커뮤니티 =======");
+		System.out.println("---------------------");
+		
+		System.out.println("제목: ");
+		String title = InputUtil.sc.nextLine();
+		System.out.println("내용: ");
+		String content = InputUtil.sc.nextLine();
+		
+		String memberNo = Main.loginmember.getNo();
+		
+		//데이터 뭉치기
+		MemberVo vo = new MemberVo();
+		vo.setTitle(title);
+		vo.setContent(content);
+		vo.setNo(memberNo);
+		
+		int result = new MemberService().write(vo);
+		//insert 결과에 따라 로직 처리
+		if(result == 1) {
+			System.out.println("게시글을 작성하였습니다.");
+		}else {
+			System.out.println("게시글 작성에 실패하였습니다.");
+		}
+		
+	}
 
 }

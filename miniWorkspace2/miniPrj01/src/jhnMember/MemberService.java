@@ -112,6 +112,38 @@ public int updatePwd(MemberVo vo) {
 		
 		return result;
 	}
+	public int write(MemberVo vo) {
+		
+		
+		if(vo.getTitle().length() <1) {
+			
+			return -1;
+		}
+		if(vo.getContent().length() <1) {
+			
+			return -2;
+		}
+		
+		Connection conn = null;
+		int result = 0;
+		try {
+			conn = JDBCTemplate.getConnection();
+			result = new MemberDao().write(vo,conn);
+			
+			if(result == 1) {
+				JDBCTemplate.close(conn);
+			}else {
+				JDBCTemplate.rollback(conn);
+			}
+			
+		}catch(Exception e) {
+			JDBCTemplate.rollback(conn);
+		}finally {
+			JDBCTemplate.close(conn);
+		}
+		
+		return result;
+	}
 	
 
 }
