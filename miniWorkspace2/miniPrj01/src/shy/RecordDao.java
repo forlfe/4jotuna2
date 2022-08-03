@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import jhnCommon.JDBCTemplate;
+
 public class RecordDao {
 	
 public List<RecordVo> showList(Connection conn) throws Exception {
@@ -45,9 +47,9 @@ public List<RecordVo> showList(Connection conn) throws Exception {
 		}
 		
 		}finally {
-			close(rs);
-			close(pstmt)
-;		}
+			JDBCTemplate.close(rs);
+			JDBCTemplate.close(pstmt);
+			}
 	
 		//sql 실행 결과 리턴
 		return recordVoList;
@@ -98,8 +100,8 @@ public List<RecordVo> showList(Connection conn) throws Exception {
 			e.printStackTrace();
 			throw e;
 		}finally {
-			close(pstmt);
-			close(rs);
+			JDBCTemplate.close(pstmt);
+			JDBCTemplate.close(rs);
 		}
 	 return vo;
 	
