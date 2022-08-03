@@ -11,15 +11,15 @@ public class TeamVo {
 	}
 	
 	private int code;
-	private int num;
+	private int cap;
 	private String teamName;
 	private Timestamp tenrollDate;
 	private String status;
 	private int record;
 	
-	public TeamVo(int code, int num, String teamName, Timestamp tenrollDate, String status, int record) {
+	public TeamVo(int code, int cap, String teamName, Timestamp tenrollDate, String status, int record) {
 		this.code = code;
-		this.num = num;
+		this.cap = cap;
 		this.teamName = teamName;
 		this.tenrollDate = tenrollDate;
 		this.status = status;
@@ -35,11 +35,11 @@ public class TeamVo {
 	}
 
 	public int getNum() {
-		return num;
+		return cap;
 	}
 
 	public void setNum(int num) {
-		this.num = num;
+		this.cap = num;
 	}
 
 	public String getTeamName() {
@@ -76,7 +76,7 @@ public class TeamVo {
 
 	@Override
 	public String toString() {
-		return "TeamVo [code=" + code + ", num=" + num + ", teamName=" + teamName + ", tenrollDate=" + tenrollDate
+		return "TeamVo [code=" + code + ", num=" + cap + ", teamName=" + teamName + ", tenrollDate=" + tenrollDate
 				+ ", status=" + status + ", record=" + record + "]";
 	}
 	
