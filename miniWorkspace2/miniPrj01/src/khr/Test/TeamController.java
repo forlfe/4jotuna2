@@ -10,12 +10,7 @@ public class TeamController {
 //			return;
 //		}
 		
-		System.out.println("====================");
-		System.out.println("----- 나의 팀 -------");
-		System.out.println("====================");
-		System.out.println("1. 나의 팀 순위 보기");
-		System.out.println("2. 나의 운동 기록 입력하기");
-		System.out.println("3. 크루 추가 모집 여부");
+		
 		System.out.println();
 		System.out.print("보기 중 번호를 선택하세요 :: ");
 		int num = InputUtil.sc.nextInt();
@@ -24,8 +19,10 @@ public class TeamController {
 			
 		}else if(num == 2) {
 			
-		}else {
+		}else if(num == 3) {
 			
+		}else {
+			System.out.println("입력 오류입니다ㅠ");
 		}
 		
 	}
