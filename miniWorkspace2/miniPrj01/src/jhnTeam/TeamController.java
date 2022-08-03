@@ -67,6 +67,8 @@ public class TeamController {
 		
 		if(result == 1) {
 			System.out.println("팀 추가 완료하였습니다.");
+			System.out.println("======================================");
+			System.out.println();
 		}else {
 			System.out.println("[ERROR: " +result+ "} 추가에 실패하였습니다!");
 		}
@@ -90,6 +92,8 @@ public class TeamController {
 		
 		if(result == 1) {
 			System.out.println("팀이름 수정을 완료하였습니다.");
+			System.out.println("======================================");
+			System.out.println();
 		}else {
 			System.out.println("[ERROR: " +result+ "} 수정에 실패하였습니다!");
 		}
@@ -111,6 +115,8 @@ public class TeamController {
 		
 		if(result == 1) {
 			System.out.println("영법 삭제 완료하였습니다.");
+			System.out.println("=======================================");
+			System.out.println();
 		}else {
 			System.out.println("[ERROR: " +result+ "} 삭제에 실패하였습니다!");
 		}

@@ -297,6 +297,8 @@ public void adminPage() {
 		//insert 결과에 따라 로직 처리
 		if(result == 1) {
 			System.out.println("게시글을 작성하였습니다.");
+			System.out.println("====================================");
+			System.out.println();
 		}else {
 			System.out.println("게시글 작성에 실패하였습니다.");
 		}
