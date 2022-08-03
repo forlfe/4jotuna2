@@ -16,7 +16,7 @@ public class RecordController {
 	 *  dao : sql 실행
 	 */
 	
-	public void showList() {
+	public static void showList() {
 		
 		//로그인 멤버 받으신 분으로 수정..!
 		String memberNick = Main.Loginmember.getNick();
@@ -76,13 +76,16 @@ public class RecordController {
 			int num = temp.getNum();
 			int strokeNo = temp.getStrokeNo();
 			double kcal = temp.getKcal();
+			String nick = temp.getNick();
+			
 		//System.out.print("운동기록번호: " + vo.getNumrec() + " | ");
 		//System.out.print("닉네임 : " + vo.getNick() + " | ");
 		//System.out.print("영법코드 : " + vo.getStrokeNo() + " | ");
 		//System.out.print("소모칼로리 : " + vo.getKcal() + " | ");
 		//System.out.println("운동시간 : " + vo.getMin() + " | ");
 		
-		System.out.println(no2 + /*" | " + nick +*/ "| "+ date + " | " + min + " | " + kcal + " | " );
+			//num 대신에 닉네임을 가지고 오고 싶은건데..
+		System.out.println(no2 + " | " + nick + "| "+ date + " | " + min + " | " + kcal + " | " );
 		
 	}
 		
